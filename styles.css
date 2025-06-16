@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --primary-color: #4d65ff;
-    --primary-hover: #3952ff;
-    --orange-color: #ff8c42;
-    --orange-hover: #ff7621;
+    --primary-color: #e6750a;
+    --primary-hover: #d4670a;
+    --accent-color: #f4a460;
+    --accent-hover: #e6943d;
     --background-dark: #0a0a0a;
     --background-secondary: #161616;
     --card-background: #1a1a1a;
@@ -213,69 +213,53 @@ header {
     background: var(--background-secondary);
 }
 
-.testimonials-grid {
+.trusted-board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
-.testimonial-card {
+.board-card {
     background: var(--card-background);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
+    text-align: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.testimonial-card:hover {
+.board-card:hover {
     transform: translateY(-4px);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 32px rgba(77, 101, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
-.testimonial-content {
-    margin-bottom: 1.5rem;
+.board-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
 }
 
-.testimonial-content p {
+.board-card h3 {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.board-card p {
     color: var(--text-secondary);
     font-size: 0.875rem;
     line-height: 1.6;
     font-style: italic;
     margin: 0;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.author-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--background-dark);
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
-
-.author-info h4 {
-    color: var(--text-primary);
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 0.25rem 0;
-}
-
-.author-info span {
-    color: var(--text-secondary);
-    font-size: 0.75rem;
-    font-weight: 500;
 }
 
 .total-assets {
@@ -299,18 +283,23 @@ header {
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    flex: 1;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .stat-card:hover {
     transform: translateY(-4px);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 32px rgba(77, 101, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
 .stat-number {
     font-size: 4rem;
     font-weight: 800;
-    color: var(--orange-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
     line-height: 1;
@@ -348,7 +337,7 @@ header {
 .service-tile:hover {
     transform: translateY(-4px);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 32px rgba(77, 101, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
 .service-icon {
@@ -400,7 +389,7 @@ header {
 .team-member:hover {
     transform: translateY(-4px);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 32px rgba(77, 101, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
 .member-avatar {
@@ -440,7 +429,7 @@ header {
 .member-social:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
-    background: rgba(77, 101, 255, 0.1);
+    background: rgba(230, 117, 10, 0.1);
     transform: scale(1.1);
 }
 
@@ -561,6 +550,12 @@ footer p {
         gap: 1.5rem;
     }
     
+    .trusted-board {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
     .team-grid {
         flex-direction: column;
         align-items: center;
@@ -598,6 +593,12 @@ footer p {
     .team,
     .total-assets {
         padding: 3rem 0;
+    }
+    
+    .trusted-board {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 1rem;
     }
     
     .stat-number {

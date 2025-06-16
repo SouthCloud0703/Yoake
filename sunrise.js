@@ -18,8 +18,8 @@ class StaticGlowVisualization {
         const centerX = this.width / 2;
         const centerY = this.height / 2;
         
-        // Logo orange color: #FF8F37 (255, 143, 55)
-        const logoOrange = '255, 143, 55';
+        // Sunrise orange color: #e6750a (230, 117, 10)
+        const sunriseOrange = '230, 117, 10';
         
         // Static glow effect - no animation
         const glowRadius = 150;
@@ -27,10 +27,10 @@ class StaticGlowVisualization {
         // Multiple glow layers for depth
         // Outer glow
         const outerGradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, glowRadius * 1.5);
-        outerGradient.addColorStop(0, `rgba(${logoOrange}, 0.12)`);
-        outerGradient.addColorStop(0.3, `rgba(${logoOrange}, 0.08)`);
-        outerGradient.addColorStop(0.6, `rgba(${logoOrange}, 0.04)`);
-        outerGradient.addColorStop(1, `rgba(${logoOrange}, 0)`);
+        outerGradient.addColorStop(0, `rgba(${sunriseOrange}, 0.12)`);
+        outerGradient.addColorStop(0.3, `rgba(${sunriseOrange}, 0.08)`);
+        outerGradient.addColorStop(0.6, `rgba(${sunriseOrange}, 0.04)`);
+        outerGradient.addColorStop(1, `rgba(${sunriseOrange}, 0)`);
         
         this.ctx.fillStyle = outerGradient;
         this.ctx.beginPath();
@@ -39,10 +39,10 @@ class StaticGlowVisualization {
         
         // Middle glow
         const middleGradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, glowRadius);
-        middleGradient.addColorStop(0, `rgba(${logoOrange}, 0.2)`);
-        middleGradient.addColorStop(0.4, `rgba(${logoOrange}, 0.12)`);
-        middleGradient.addColorStop(0.8, `rgba(${logoOrange}, 0.05)`);
-        middleGradient.addColorStop(1, `rgba(${logoOrange}, 0)`);
+        middleGradient.addColorStop(0, `rgba(${sunriseOrange}, 0.2)`);
+        middleGradient.addColorStop(0.4, `rgba(${sunriseOrange}, 0.12)`);
+        middleGradient.addColorStop(0.8, `rgba(${sunriseOrange}, 0.05)`);
+        middleGradient.addColorStop(1, `rgba(${sunriseOrange}, 0)`);
         
         this.ctx.fillStyle = middleGradient;
         this.ctx.beginPath();
@@ -51,9 +51,9 @@ class StaticGlowVisualization {
         
         // Inner glow
         const innerGradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, glowRadius * 0.6);
-        innerGradient.addColorStop(0, `rgba(${logoOrange}, 0.3)`);
-        innerGradient.addColorStop(0.5, `rgba(${logoOrange}, 0.15)`);
-        innerGradient.addColorStop(1, `rgba(${logoOrange}, 0)`);
+        innerGradient.addColorStop(0, `rgba(${sunriseOrange}, 0.3)`);
+        innerGradient.addColorStop(0.5, `rgba(${sunriseOrange}, 0.15)`);
+        innerGradient.addColorStop(1, `rgba(${sunriseOrange}, 0)`);
         
         this.ctx.fillStyle = innerGradient;
         this.ctx.beginPath();

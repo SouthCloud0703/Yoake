@@ -12,7 +12,8 @@ strengthens Solana’s infrastructure by supporting validator growth and promoti
 ## Trusted Client
 
 ## Service
-### High-performance validator operations
+### Yoake Validator
+High-performance validator operations
 -Validator Information-
 Commission : 0%
 MEV : 0%
