@@ -144,6 +144,59 @@ header {
     font-weight: 400;
 }
 
+.hero-content p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+.partner-slider {
+    padding: 4rem 0;
+    background: var(--background-dark);
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    animation: slide 30s linear infinite;
+    gap: 2rem;
+    width: fit-content;
+}
+
+.partner-box {
+    flex-shrink: 0;
+    width: 200px;
+    height: 100px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.partner-box:hover {
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .partners {
     padding: 6rem 0;
     background: var(--background-secondary);
