@@ -182,12 +182,25 @@ header {
     color: var(--text-secondary);
     font-size: 0.875rem;
     transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+.partner-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
 }
 
 .partner-box:hover {
     border-color: #e6750a !important;
     color: var(--text-primary);
     transform: translateY(-2px);
+}
+
+.partner-box:hover img {
+    filter: brightness(1);
 }
 
 @keyframes slide {
@@ -418,10 +431,24 @@ header {
     box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
+.team-member:hover .member-avatar {
+    border-color: #e6750a !important;
+}
+
 .member-avatar {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .team-member h3 {

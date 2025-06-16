@@ -1,7 +1,7 @@
 # Yoake Labs Website Content
 
 ## Header
-- Logo: https://validatirimage2.s3.ap-southeast-2.amazonaws.com/yoake.png
+- Logo: ./images/yoake-logo.png
 - Company Name: Yoake Labs
 
 ## Hero Section
@@ -9,14 +9,14 @@
 - Subtitle: strengthens Solana's infrastructure by supporting validator growth and promoting IBRL
 
 ## Partner Slider (自動スライド)
-- Partner 1
-- Partner 2  
-- Partner 3
-- Partner 4
-- Partner 5
-- Partner 6
-- Partner 7
-- Partner 8
+- ./images/partners/solana-logo.png
+- ./images/partners/partner-2.png
+- ./images/partners/partner-3.png
+- ./images/partners/partner-4.png
+- ./images/partners/partner-5.png
+- ./images/partners/partner-6.png
+- ./images/partners/partner-7.png
+- ./images/partners/partner-8.png
 
 ## Statistics Section
 ### Total Assets Staked
@@ -48,46 +48,28 @@
 - Title: Enterprise Partnerships
 - Description: IBRL promotion and collaboration with major Japanese enterprises for Solana adoption.
 
-## Trusted by Section (3x2 Grid)
-### Client 1: DeFi Protocol
-- Icon: 🏛️
-- Title: DeFi Protocol
-- Testimonial: "Exceptional validator services with zero commission and maximum reliability."
+## Trusted by Section (横1列 - 2つのタイル)
+### Testimonial 1: Alex Chen
+- Avatar: ./images/testimonials/alex-chen.jpg
+- Name: Alex Chen
+- Title: CTO, DeFi Protocol
+- Testimonial: "Exceptional validator services with zero commission and maximum reliability. Their infrastructure is top-notch and has been instrumental in our operations."
 
-### Client 2: Enterprise Partner
-- Icon: 🏢
-- Title: Enterprise Partner
-- Testimonial: "Outstanding uptime and professional support for our Solana operations."
-
-### Client 3: Web3 Startup
-- Icon: 🚀
-- Title: Web3 Startup
-- Testimonial: "Unmatched expertise and dedication to the Solana ecosystem."
-
-### Client 4: Institutional Client
-- Icon: 💼
-- Title: Institutional Client
-- Testimonial: "Reliable, secure, and efficient with excellent technical support."
-
-### Client 5: Global Exchange
-- Icon: 🌐
-- Title: Global Exchange
-- Testimonial: "Trusted infrastructure partner for mission-critical operations."
-
-### Client 6: Lightning Network
-- Icon: ⚡
-- Title: Lightning Network
-- Testimonial: "High-performance validation with exceptional network reliability."
+### Testimonial 2: Sarah Johnson
+- Avatar: ./images/testimonials/sarah-johnson.jpg
+- Name: Sarah Johnson
+- Title: Head of Operations, Enterprise Partner
+- Testimonial: "Outstanding uptime and professional support. The team's expertise and dedication to the Solana ecosystem is unmatched. Highly recommended."
 
 ## Team Section
 ### Team Member 1
-- Avatar: 👤
+- Avatar: ./images/team/yutaro.jpg
 - Name: Yutaro
 - Role: CEO
 - Social: https://x.com/SouthCloud0703
 
 ### Team Member 2
-- Avatar: 👤
+- Avatar: ./images/team/softgate.jpg
 - Name: Softgate
 - Role: CTO
 - Social: https://x.com/SoftgateJa
