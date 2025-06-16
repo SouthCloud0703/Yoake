@@ -1,14 +1,11 @@
-class GlowVisualization {
+class StaticGlowVisualization {
     constructor(canvas) {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
         this.width = canvas.width;
         this.height = canvas.height;
         
-        // Animation time
-        this.time = 0;
-        
-        this.animate();
+        this.draw();
     }
     
     drawBackground() {
@@ -24,16 +21,15 @@ class GlowVisualization {
         // Logo orange color: #FF8F37 (255, 143, 55)
         const logoOrange = '255, 143, 55';
         
-        // Animated glow effect with subtle pulsing
-        const pulse = Math.sin(this.time * 0.001) * 0.2 + 0.8;
-        const glowRadius = 150 * pulse;
+        // Static glow effect - no animation
+        const glowRadius = 150;
         
         // Multiple glow layers for depth
         // Outer glow
         const outerGradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, glowRadius * 1.5);
-        outerGradient.addColorStop(0, `rgba(${logoOrange}, ${0.15 * pulse})`);
-        outerGradient.addColorStop(0.3, `rgba(${logoOrange}, ${0.08 * pulse})`);
-        outerGradient.addColorStop(0.6, `rgba(${logoOrange}, ${0.04 * pulse})`);
+        outerGradient.addColorStop(0, `rgba(${logoOrange}, 0.12)`);
+        outerGradient.addColorStop(0.3, `rgba(${logoOrange}, 0.08)`);
+        outerGradient.addColorStop(0.6, `rgba(${logoOrange}, 0.04)`);
         outerGradient.addColorStop(1, `rgba(${logoOrange}, 0)`);
         
         this.ctx.fillStyle = outerGradient;
@@ -43,9 +39,9 @@ class GlowVisualization {
         
         // Middle glow
         const middleGradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, glowRadius);
-        middleGradient.addColorStop(0, `rgba(${logoOrange}, ${0.25 * pulse})`);
-        middleGradient.addColorStop(0.4, `rgba(${logoOrange}, ${0.12 * pulse})`);
-        middleGradient.addColorStop(0.8, `rgba(${logoOrange}, ${0.05 * pulse})`);
+        middleGradient.addColorStop(0, `rgba(${logoOrange}, 0.2)`);
+        middleGradient.addColorStop(0.4, `rgba(${logoOrange}, 0.12)`);
+        middleGradient.addColorStop(0.8, `rgba(${logoOrange}, 0.05)`);
         middleGradient.addColorStop(1, `rgba(${logoOrange}, 0)`);
         
         this.ctx.fillStyle = middleGradient;
@@ -55,8 +51,8 @@ class GlowVisualization {
         
         // Inner glow
         const innerGradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, glowRadius * 0.6);
-        innerGradient.addColorStop(0, `rgba(${logoOrange}, ${0.35 * pulse})`);
-        innerGradient.addColorStop(0.5, `rgba(${logoOrange}, ${0.18 * pulse})`);
+        innerGradient.addColorStop(0, `rgba(${logoOrange}, 0.3)`);
+        innerGradient.addColorStop(0.5, `rgba(${logoOrange}, 0.15)`);
         innerGradient.addColorStop(1, `rgba(${logoOrange}, 0)`);
         
         this.ctx.fillStyle = innerGradient;
@@ -65,15 +61,11 @@ class GlowVisualization {
         this.ctx.fill();
     }
     
-    animate() {
-        this.time += 16; // Approximate 60fps timing
-        
+    draw() {
         this.ctx.clearRect(0, 0, this.width, this.height);
         
         this.drawBackground();
         this.drawGlow();
-        
-        requestAnimationFrame(() => this.animate());
     }
 }
 
@@ -91,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.glowViz) {
                 window.glowViz.width = canvas.width;
                 window.glowViz.height = canvas.height;
+                window.glowViz.draw(); // Redraw static content
             }
         };
         
@@ -98,6 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resizeCanvas);
         
         // Initialize visualization
-        window.glowViz = new GlowVisualization(canvas);
+        window.glowViz = new StaticGlowVisualization(canvas);
     }
 });
