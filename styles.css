@@ -221,7 +221,7 @@ header {
     display: flex;
     animation: slideReverse 25s linear infinite;
     gap: 2rem;
-    width: fit-content;
+    width: calc(180px * 16 + 2rem * 15);
 }
 
 .trusted-box {
@@ -248,11 +248,46 @@ header {
 
 @keyframes slideReverse {
     0% {
-        transform: translateX(-50%);
-    }
-    100% {
         transform: translateX(0);
     }
+    100% {
+        transform: translateX(calc(-180px * 8 - 2rem * 7));
+    }
+}
+
+.total-assets {
+    padding: 6rem 0;
+    background: var(--background-secondary);
+}
+
+.assets-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.assets-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    letter-spacing: -0.025em;
+}
+
+.assets-amount {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.assets-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
 }
 
 .services {
@@ -299,6 +334,61 @@ header {
 }
 
 .service-tile p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.team {
+    padding: 6rem 0;
+    background: var(--background-dark);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 32px rgba(77, 101, 255, 0.1);
+}
+
+.member-avatar {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
     color: var(--text-secondary);
     font-size: 0.875rem;
     line-height: 1.6;
@@ -411,7 +501,9 @@ footer p {
     }
     
     .trusted-by,
-    .services {
+    .services,
+    .team,
+    .total-assets {
         padding: 4rem 0;
     }
     
@@ -439,7 +531,13 @@ footer p {
     }
     
     .trusted-by,
-    .services {
+    .services,
+    .team,
+    .total-assets {
         padding: 3rem 0;
+    }
+    
+    .assets-amount {
+        font-size: 3rem;
     }
 }
