@@ -67,13 +67,13 @@
 
 ## Team Section
 ### Team Member 1
-- Avatar: /images/team/yutaro.png
+- Avatar: /images/team/yutaro.jpg
 - Name: Yutaro
 - Role: CEO
 - Social: https://x.com/SouthCloud0703
 
 ### Team Member 2
-- Avatar: /images/team/softgate.png
+- Avatar: /images/team/softgate.jpg
 - Name: Softgate
 - Role: CTO
 - Social: https://x.com/SoftgateJa
