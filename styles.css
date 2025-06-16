@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --primary-color: #e6750a;
-    --primary-hover: #d4670a;
-    --accent-color: #f4a460;
-    --accent-hover: #e6943d;
+    --primary-color: #e6750a !important;
+    --primary-hover: #d4670a !important;
+    --accent-color: #f4a460 !important;
+    --accent-hover: #e6943d !important;
     --background-dark: #0a0a0a;
     --background-secondary: #161616;
     --card-background: #1a1a1a;
@@ -185,7 +185,7 @@ header {
 }
 
 .partner-box:hover {
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
     color: var(--text-primary);
     transform: translateY(-2px);
 }
@@ -235,7 +235,7 @@ header {
 
 .testimonial-card:hover {
     transform: translateY(-4px);
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
     box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
@@ -315,7 +315,7 @@ header {
 
 .stat-card:hover {
     transform: translateY(-4px);
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
     box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
@@ -359,7 +359,7 @@ header {
 
 .service-tile:hover {
     transform: translateY(-4px);
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
     box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
@@ -411,7 +411,7 @@ header {
 
 .team-member:hover {
     transform: translateY(-4px);
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
     box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
@@ -429,7 +429,7 @@ header {
 }
 
 .member-role {
-    color: var(--primary-color);
+    color: #e6750a !important;
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
@@ -450,7 +450,7 @@ header {
 }
 
 .member-social:hover {
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
     color: var(--primary-color);
     background: rgba(230, 117, 10, 0.1);
     transform: scale(1.1);
@@ -490,7 +490,7 @@ header {
 }
 
 .info-item:hover {
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
 }
 
 .info-label {
@@ -522,7 +522,7 @@ header {
 }
 
 .pubkey-item:hover {
-    border-color: var(--primary-color);
+    border-color: #e6750a !important;
 }
 
 .pubkey-item strong {
