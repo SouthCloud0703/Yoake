@@ -28,3 +28,11 @@ We provide high-performance validator operations on behalf of Solana-native proj
 
 ## logo
 https://validatirimage2.s3.ap-southeast-2.amazonaws.com/yoake.png
+
+## Team
+Yutaro - CEO - https://x.com/SouthCloud0703
+Softgate - CTO - https://x.com/SoftgateJa
+
+## Total Assets Staked
+$100M+ USD
+

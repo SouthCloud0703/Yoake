@@ -100,16 +100,6 @@ header {
     line-height: 1.1;
 }
 
-.hero p {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    margin-bottom: 0;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 400;
-    line-height: 1.6;
-}
 
 .cta-button {
     display: inline-flex;
