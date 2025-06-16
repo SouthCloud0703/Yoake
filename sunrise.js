@@ -1,4 +1,4 @@
-class ModernVisualization {
+class SunVisualization {
     constructor(canvas) {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
@@ -9,12 +9,8 @@ class ModernVisualization {
         this.mouseX = this.width / 2;
         this.mouseY = this.height / 2;
         
-        // Animation state (0 = dark, 1 = bright)
-        this.intensity = 0;
-        
-        // Grid and geometric elements
-        this.time = 0;
-        this.gridSize = 40;
+        // Sun intensity (0 = dim, 1 = bright)
+        this.intensity = 0.3;
         
         this.bindEvents();
         this.animate();
@@ -32,148 +28,99 @@ class ModernVisualization {
     }
     
     drawBackground() {
-        // Dynamic background based on intensity
-        const darkness = Math.floor((1 - this.intensity) * 15 + 5);
-        this.ctx.fillStyle = `hsl(220, 20%, ${darkness}%)`;
+        // Simple gradient background based on intensity
+        const gradient = this.ctx.createLinearGradient(0, 0, 0, this.height);
+        
+        if (this.intensity < 0.3) {
+            // Night
+            gradient.addColorStop(0, `hsl(220, 30%, ${5 + this.intensity * 10}%)`);
+            gradient.addColorStop(1, `hsl(240, 40%, ${3 + this.intensity * 7}%)`);
+        } else if (this.intensity < 0.7) {
+            // Dawn
+            const dawnProgress = (this.intensity - 0.3) / 0.4;
+            gradient.addColorStop(0, `hsl(${220 - dawnProgress * 40}, 50%, ${15 + dawnProgress * 25}%)`);
+            gradient.addColorStop(1, `hsl(${30 - dawnProgress * 10}, 60%, ${20 + dawnProgress * 30}%)`);
+        } else {
+            // Day
+            const dayProgress = (this.intensity - 0.7) / 0.3;
+            gradient.addColorStop(0, `hsl(200, 60%, ${40 + dayProgress * 20}%)`);
+            gradient.addColorStop(1, `hsl(220, 50%, ${50 + dayProgress * 15}%)`);
+        }
+        
+        this.ctx.fillStyle = gradient;
         this.ctx.fillRect(0, 0, this.width, this.height);
     }
     
-    drawGrid() {
-        const opacity = 0.05 + this.intensity * 0.15;
-        this.ctx.strokeStyle = `rgba(77, 101, 255, ${opacity})`;
-        this.ctx.lineWidth = 1;
+    drawSun() {
+        const sunX = this.mouseX;
+        const sunY = this.height * 0.75 - (this.intensity * this.height * 0.5);
         
-        // Vertical lines
-        for (let x = 0; x <= this.width; x += this.gridSize) {
-            this.ctx.beginPath();
-            this.ctx.moveTo(x, 0);
-            this.ctx.lineTo(x, this.height);
-            this.ctx.stroke();
+        // Sun size based on intensity
+        const baseRadius = 25;
+        const maxRadius = 60;
+        const radius = baseRadius + (maxRadius - baseRadius) * this.intensity;
+        
+        // Sun color based on intensity
+        let sunColor;
+        if (this.intensity < 0.3) {
+            // Moon-like when dim
+            sunColor = `rgba(220, 230, 250, ${0.3 + this.intensity * 0.7})`;
+        } else if (this.intensity < 0.7) {
+            // Sunrise colors
+            const progress = (this.intensity - 0.3) / 0.4;
+            const red = Math.floor(255 * (0.8 + progress * 0.2));
+            const green = Math.floor(180 + progress * 75);
+            const blue = Math.floor(80 + progress * 40);
+            sunColor = `rgba(${red}, ${green}, ${blue}, ${0.8 + progress * 0.2})`;
+        } else {
+            // Bright day sun
+            const progress = (this.intensity - 0.7) / 0.3;
+            sunColor = `rgba(255, ${220 + progress * 35}, ${120 + progress * 80}, ${0.9 + progress * 0.1})`;
         }
-        
-        // Horizontal lines
-        for (let y = 0; y <= this.height; y += this.gridSize) {
-            this.ctx.beginPath();
-            this.ctx.moveTo(0, y);
-            this.ctx.lineTo(this.width, y);
-            this.ctx.stroke();
-        }
-    }
-    
-    drawCentralOrb() {
-        const centerX = this.width / 2;
-        const centerY = this.height / 2;
-        
-        // Main orb that follows mouse X
-        const orbX = this.mouseX;
-        const orbY = centerY + (this.mouseY - centerY) * 0.3;
-        
-        // Orb size based on intensity
-        const baseSize = 30;
-        const maxSize = 80;
-        const size = baseSize + (maxSize - baseSize) * this.intensity;
         
         // Outer glow
-        const glowGradient = this.ctx.createRadialGradient(orbX, orbY, 0, orbX, orbY, size * 2);
-        glowGradient.addColorStop(0, `rgba(77, 101, 255, ${0.3 + this.intensity * 0.4})`);
-        glowGradient.addColorStop(0.5, `rgba(77, 101, 255, ${0.1 + this.intensity * 0.2})`);
-        glowGradient.addColorStop(1, 'rgba(77, 101, 255, 0)');
+        const glowRadius = radius * (1.5 + this.intensity * 1.5);
+        const glowGradient = this.ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, glowRadius);
+        
+        if (this.intensity < 0.3) {
+            glowGradient.addColorStop(0, `rgba(220, 230, 250, ${this.intensity * 0.4})`);
+            glowGradient.addColorStop(0.7, `rgba(200, 220, 240, ${this.intensity * 0.2})`);
+        } else {
+            glowGradient.addColorStop(0, `rgba(255, 200, 100, ${0.3 + this.intensity * 0.4})`);
+            glowGradient.addColorStop(0.5, `rgba(255, 150, 50, ${0.2 + this.intensity * 0.3})`);
+        }
+        glowGradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
         
         this.ctx.fillStyle = glowGradient;
         this.ctx.beginPath();
-        this.ctx.arc(orbX, orbY, size * 2, 0, Math.PI * 2);
+        this.ctx.arc(sunX, sunY, glowRadius, 0, Math.PI * 2);
         this.ctx.fill();
         
-        // Core orb
-        this.ctx.fillStyle = `rgba(77, 101, 255, ${0.6 + this.intensity * 0.4})`;
+        // Main sun body
+        this.ctx.fillStyle = sunColor;
         this.ctx.beginPath();
-        this.ctx.arc(orbX, orbY, size * 0.7, 0, Math.PI * 2);
+        this.ctx.arc(sunX, sunY, radius, 0, Math.PI * 2);
         this.ctx.fill();
         
-        // Inner core
-        this.ctx.fillStyle = `rgba(200, 220, 255, ${0.8 + this.intensity * 0.2})`;
-        this.ctx.beginPath();
-        this.ctx.arc(orbX, orbY, size * 0.3, 0, Math.PI * 2);
-        this.ctx.fill();
-    }
-    
-    drawConnectedNodes() {
-        const nodeCount = 6;
-        const centerX = this.width / 2;
-        const centerY = this.height / 2;
-        const radius = 120 + this.intensity * 40;
-        
-        this.ctx.strokeStyle = `rgba(77, 101, 255, ${0.2 + this.intensity * 0.3})`;
-        this.ctx.lineWidth = 2;
-        
-        for (let i = 0; i < nodeCount; i++) {
-            const angle = (i / nodeCount) * Math.PI * 2 + this.time * 0.001;
-            const x = centerX + Math.cos(angle) * radius;
-            const y = centerY + Math.sin(angle) * radius;
+        // Inner bright core
+        if (this.intensity > 0.3) {
+            const coreRadius = radius * 0.4;
+            const coreGradient = this.ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, coreRadius);
+            coreGradient.addColorStop(0, `rgba(255, 255, 255, ${this.intensity * 0.8})`);
+            coreGradient.addColorStop(1, `rgba(255, 255, 200, ${this.intensity * 0.4})`);
             
-            // Draw connection line to center
+            this.ctx.fillStyle = coreGradient;
             this.ctx.beginPath();
-            this.ctx.moveTo(centerX, centerY);
-            this.ctx.lineTo(x, y);
-            this.ctx.stroke();
-            
-            // Draw node
-            this.ctx.fillStyle = `rgba(77, 101, 255, ${0.4 + this.intensity * 0.4})`;
-            this.ctx.beginPath();
-            this.ctx.arc(x, y, 4 + this.intensity * 4, 0, Math.PI * 2);
+            this.ctx.arc(sunX, sunY, coreRadius, 0, Math.PI * 2);
             this.ctx.fill();
         }
     }
     
-    drawDataStreams() {
-        const streamCount = 8;
-        const centerX = this.width / 2;
-        const centerY = this.height / 2;
-        
-        this.ctx.strokeStyle = `rgba(77, 101, 255, ${0.1 + this.intensity * 0.2})`;
-        this.ctx.lineWidth = 1;
-        
-        for (let i = 0; i < streamCount; i++) {
-            const angle = (i / streamCount) * Math.PI * 2;
-            const distance = 200 + Math.sin(this.time * 0.002 + i) * 50;
-            
-            const startX = centerX + Math.cos(angle) * 60;
-            const startY = centerY + Math.sin(angle) * 60;
-            const endX = centerX + Math.cos(angle) * distance;
-            const endY = centerY + Math.sin(angle) * distance;
-            
-            // Draw stream line
-            this.ctx.beginPath();
-            this.ctx.moveTo(startX, startY);
-            this.ctx.lineTo(endX, endY);
-            this.ctx.stroke();
-            
-            // Draw data points along the stream
-            const segments = 5;
-            for (let j = 1; j <= segments; j++) {
-                const t = j / segments;
-                const px = startX + (endX - startX) * t;
-                const py = startY + (endY - startY) * t;
-                
-                const size = (1 + Math.sin(this.time * 0.005 + i + j)) * 2;
-                this.ctx.fillStyle = `rgba(77, 101, 255, ${0.3 + this.intensity * 0.4})`;
-                this.ctx.beginPath();
-                this.ctx.arc(px, py, size, 0, Math.PI * 2);
-                this.ctx.fill();
-            }
-        }
-    }
-    
     animate() {
-        this.time += 16; // Approximate 60fps timing
-        
         this.ctx.clearRect(0, 0, this.width, this.height);
         
         this.drawBackground();
-        this.drawGrid();
-        this.drawDataStreams();
-        this.drawConnectedNodes();
-        this.drawCentralOrb();
+        this.drawSun();
         
         requestAnimationFrame(() => this.animate());
     }
@@ -190,9 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.height = rect.height;
             
             // Reinitialize if needed
-            if (window.modernViz) {
-                window.modernViz.width = canvas.width;
-                window.modernViz.height = canvas.height;
+            if (window.sunViz) {
+                window.sunViz.width = canvas.width;
+                window.sunViz.height = canvas.height;
             }
         };
         
@@ -200,6 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resizeCanvas);
         
         // Initialize visualization
-        window.modernViz = new ModernVisualization(canvas);
+        window.sunViz = new SunVisualization(canvas);
     }
 });
