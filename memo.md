@@ -3,8 +3,8 @@
 Where Innovation Dawns
 
 ## Vision Details
-Yoake Labs is dedicated to advancing the infrastructure of Solana.
-Our core mission is to strengthen the validator ecosystem—empowering Solana contributors to more easily participate as validators and promoting IBRL in collaboration with leading Japanese enterprises.
+Yoake Labs builds and strengthens Solana’s infrastructure, with a focus on the validator ecosystem.
+We help contributors join as validators and promote IBRL in partnership with major Japanese enterprises.
 
 ## Partner
 ・Solana Foundation
