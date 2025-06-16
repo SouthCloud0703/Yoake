@@ -213,53 +213,76 @@ header {
     background: var(--background-secondary);
 }
 
-.trusted-board {
+.testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
     margin-top: 2rem;
 }
 
-.board-card {
+.testimonial-card {
     background: var(--card-background);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    text-align: center;
     transition: all 0.3s ease;
-    cursor: pointer;
-    min-height: 160px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.board-card:hover {
+.testimonial-card:hover {
     transform: translateY(-4px);
     border-color: var(--primary-color);
     box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
 }
 
-.board-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
+.testimonial-content {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
-.board-card h3 {
-    font-size: 1.125rem;
-    color: var(--text-primary);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.board-card p {
+.testimonial-content p {
     color: var(--text-secondary);
     font-size: 0.875rem;
     line-height: 1.6;
     font-style: italic;
     margin: 0;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--background-dark);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.author-info h4 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+}
+
+.author-info span {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .total-assets {
@@ -550,10 +573,10 @@ footer p {
         gap: 1.5rem;
     }
     
-    .trusted-board {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        gap: 1rem;
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 1.5rem;
     }
     
     .team-grid {
@@ -595,11 +618,6 @@ footer p {
         padding: 3rem 0;
     }
     
-    .trusted-board {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-        gap: 1rem;
-    }
     
     .stat-number {
         font-size: 3rem;
