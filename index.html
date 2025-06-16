@@ -59,10 +59,23 @@
 
     <section class="total-assets" id="total-assets">
         <div class="container">
-            <div class="assets-content">
-                <h2 class="assets-title">Total Assets Staked</h2>
-                <div class="assets-amount">$100M+ USD</div>
-                <p class="assets-description">Trusted by the Solana ecosystem with zero commission and maximum reliability</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$100M+</div>
+                    <div class="stat-label">Total Assets Staked</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.99%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Commission</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Monitoring</div>
+                </div>
             </div>
         </div>
     </section>
@@ -103,25 +116,22 @@
             <h2 class="section-title">Trusted by</h2>
         </div>
         <div class="trusted-slider">
-            <div class="trusted-slider-track">
-                <div class="trusted-box">Client 1</div>
-                <div class="trusted-box">Client 2</div>
-                <div class="trusted-box">Client 3</div>
-                <div class="trusted-box">Client 4</div>
-                <div class="trusted-box">Client 5</div>
-                <div class="trusted-box">Client 6</div>
-                <div class="trusted-box">Client 7</div>
-                <div class="trusted-box">Client 8</div>
-                <!-- Duplicate for seamless loop -->
-                <div class="trusted-box">Client 1</div>
-                <div class="trusted-box">Client 2</div>
-                <div class="trusted-box">Client 3</div>
-                <div class="trusted-box">Client 4</div>
-                <div class="trusted-box">Client 5</div>
-                <div class="trusted-box">Client 6</div>
-                <div class="trusted-box">Client 7</div>
-                <div class="trusted-box">Client 8</div>
+            <button class="slider-btn slider-btn-left" id="trusted-prev">←</button>
+            <div class="trusted-slider-container">
+                <div class="trusted-slider-track" id="trusted-track">
+                    <div class="trusted-box">Client 1</div>
+                    <div class="trusted-box">Client 2</div>
+                    <div class="trusted-box">Client 3</div>
+                    <div class="trusted-box">Client 4</div>
+                    <div class="trusted-box">Client 5</div>
+                    <div class="trusted-box">Client 6</div>
+                    <div class="trusted-box">Client 7</div>
+                    <div class="trusted-box">Client 8</div>
+                    <div class="trusted-box">Client 9</div>
+                    <div class="trusted-box">Client 10</div>
+                </div>
             </div>
+            <button class="slider-btn slider-btn-right" id="trusted-next">→</button>
         </div>
     </section>
 
@@ -131,21 +141,23 @@
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-avatar">👤</div>
-                    <h3>Team Member 1</h3>
-                    <p class="member-role">Founder & CEO</p>
-                    <p class="member-bio">Leading validator operations and infrastructure development</p>
+                    <h3>Yutaro</h3>
+                    <p class="member-role">CEO</p>
+                    <a href="https://x.com/SouthCloud0703" target="_blank" class="member-social">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
                 </div>
                 <div class="team-member">
                     <div class="member-avatar">👤</div>
-                    <h3>Team Member 2</h3>
+                    <h3>Softgate</h3>
                     <p class="member-role">CTO</p>
-                    <p class="member-bio">Building secure and scalable validator infrastructure</p>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">👤</div>
-                    <h3>Team Member 3</h3>
-                    <p class="member-role">Head of Partnerships</p>
-                    <p class="member-bio">Expanding enterprise partnerships in Japan</p>
+                    <a href="https://x.com/SoftgateJa" target="_blank" class="member-social">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -158,5 +170,6 @@
     </footer>
     
     <script src="sunrise.js"></script>
+    <script src="trusted-slider.js"></script>
 </body>
 </html>
