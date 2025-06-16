@@ -183,14 +183,19 @@ header {
     font-size: 0.875rem;
     transition: all 0.3s ease;
     padding: 1rem;
+    overflow: hidden;
 }
 
 .partner-box img {
-    max-width: 100%;
-    max-height: 100%;
+    width: auto;
+    height: auto;
+    max-width: calc(100% - 2rem);
+    max-height: calc(100% - 2rem);
     object-fit: contain;
+    object-position: center;
     filter: brightness(0.8);
     transition: filter 0.3s ease;
+    display: block;
 }
 
 .partner-box:hover {
@@ -443,12 +448,19 @@ header {
     overflow: hidden;
     border: 3px solid var(--border-color);
     transition: border-color 0.3s ease;
+    position: relative;
+    background: var(--card-background);
 }
 
 .member-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
 }
 
 .team-member h3 {
