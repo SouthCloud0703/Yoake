@@ -127,7 +127,7 @@ header {
 }
 
 .vision {
-    padding: 6rem 0;
+    padding: 6rem 0 2rem;
     background: var(--background-dark);
 }
 
@@ -153,7 +153,7 @@ header {
 }
 
 .partner-slider {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem;
     background: var(--background-dark);
     overflow: hidden;
     position: relative;
@@ -197,11 +197,6 @@ header {
     }
 }
 
-.partners {
-    padding: 6rem 0;
-    background: var(--background-secondary);
-}
-
 .section-title {
     font-size: 2.25rem;
     font-weight: 700;
@@ -211,103 +206,53 @@ header {
     letter-spacing: -0.025em;
 }
 
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.trusted-by {
+    padding: 6rem 0 4rem;
+    background: var(--background-secondary);
+}
+
+.trusted-slider {
+    overflow: hidden;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.trusted-slider-track {
+    display: flex;
+    animation: slideReverse 25s linear infinite;
     gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    width: fit-content;
 }
 
-.partner-card {
+.trusted-box {
+    flex-shrink: 0;
+    width: 180px;
+    height: 90px;
     background: var(--card-background);
-    padding: 2rem;
-    border-radius: 12px;
     border: 1px solid var(--border-color);
-    text-align: center;
-    transition: all 0.2s ease;
-}
-
-.partner-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--primary-color);
-}
-
-.partner-logo {
-    height: 60px;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.partner-logo img {
-    max-height: 100%;
-    max-width: 120px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-}
-
-.partner-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-.partner-card p {
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-    line-height: 1.5;
-}
-
-.trusted-clients {
-    padding: 6rem 0;
-    background: var(--background-dark);
-}
-
-.clients-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.client-placeholder {
-    background: var(--card-background);
-    padding: 3rem 2rem;
     border-radius: 12px;
-    border: 2px dashed var(--border-color);
-    text-align: center;
-    transition: all 0.2s ease;
-}
-
-.client-placeholder:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.client-logo-placeholder {
-    height: 80px;
-    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(77, 101, 255, 0.1);
-    border-radius: 8px;
-    border: 1px solid rgba(77, 101, 255, 0.2);
-}
-
-.client-logo-placeholder span {
-    color: var(--primary-color);
-    font-size: 1rem;
     font-weight: 600;
-}
-
-.client-placeholder p {
     color: var(--text-secondary);
     font-size: 0.875rem;
-    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.trusted-box:hover {
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+@keyframes slideReverse {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .services {
@@ -523,25 +468,18 @@ footer p {
         font-size: 2rem;
     }
     
-    .partners,
-    .trusted-clients,
+    .trusted-by,
     .services {
         padding: 4rem 0;
     }
     
-    .partners-grid,
-    .service-grid {
+    .services-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
-    .partner-card,
     .service-card {
         padding: 1.5rem;
-    }
-    
-    .client-placeholder {
-        padding: 2rem 1.5rem;
     }
     
     .info-grid {
@@ -558,8 +496,7 @@ footer p {
         padding: 4rem 0 3rem;
     }
     
-    .partners,
-    .trusted-clients,
+    .trusted-by,
     .services {
         padding: 3rem 0;
     }
