@@ -67,14 +67,28 @@ header {
 }
 
 .hero {
+    position: relative;
     padding: 8rem 0 6rem;
     text-align: center;
     background: var(--background-dark);
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.sunrise-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero h2 {
