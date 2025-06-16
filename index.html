@@ -60,10 +60,6 @@
                     <div class="stat-number">$100M+</div>
                     <div class="stat-label">Total Assets Staked</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Supported Projects</div>
-                </div>
             </div>
         </div>
     </section>
@@ -72,7 +68,7 @@
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                <div class="service-tile">
+                <div class="service-tile" onclick="openServiceModal('validator')">
                     <div class="service-icon">
                         <img src="./images/services/validator.png" alt="Validator Operations">
                     </div>
@@ -80,7 +76,7 @@
                     <p>Zero commission validator operations with 99.99% uptime and Frankfurt-based infrastructure.</p>
                 </div>
 
-                <div class="service-tile">
+                <div class="service-tile" onclick="openServiceModal('vaas')">
                     <div class="service-icon">
                         <img src="./images/services/vaas.png" alt="Validator as a Service">
                     </div>
@@ -90,6 +86,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeServiceModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
 
     <section class="team" id="team">
         <div class="container">
@@ -130,5 +136,6 @@
     </footer>
     
     <script src="sunrise.js"></script>
+    <script src="services.js"></script>
 </body>
 </html>

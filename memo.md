@@ -19,20 +19,31 @@
 - Number: $100M+
 - Label: Total Assets Staked
 
-### Supported Projects
-- Number: 6
-- Label: Supported Projects
-
 ## Our Services (2x2 Grid)
 ### Service 1: High-performance Validator Operations
 - Icon: /images/services/validator.png
 - Title: High-performance Validator Operations
 - Description: Zero commission validator operations with 99.99% uptime and Frankfurt-based infrastructure.
+- **Detailed Features:**
+  - 0% Commission and 0% MEV
+  - 99.99% Uptime with enterprise-grade infrastructure
+  - Frankfurt location for optimal European performance
+  - Real-time monitoring and automated failover
+  - Identity: 4k6wgP5WPBKQpsFGtzuXNrjcTE2fKWLj17nDvFeG5zSF
+  - Vote Account: 8zuMRTXThoPTTPLLvaiKiJshLLCqGMt9BdRjjCL19xBc
 
 ### Service 2: Validator as a Service
 - Icon: /images/services/vaas.png
 - Title: Validator as a Service
 - Description: Complete validator operations for Solana-native projects and communities with maximum reliability.
+- **Detailed Features:**
+  - White-label validation under your brand
+  - Custom infrastructure and dedicated hardware
+  - 24/7 technical support and monitoring
+  - Active governance participation
+  - Detailed reporting and analytics
+  - Perfect for DeFi protocols, DAOs, exchanges, and enterprises
+  - Complete operational overhead management
 
 ## Trusted by Section (3x2 Grid)
 ### Client 1: DeFi Protocol
