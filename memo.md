@@ -10,7 +10,7 @@
 
 ## Partner Slider (自動スライド)
 - /images/partners/partner1.png
-- /images/partners/partner2.png
+- /images/partners/partner2.jpg
 - /images/partners/partner3.png
 
 

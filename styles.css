@@ -441,15 +441,18 @@ header {
     border-radius: 16px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .service-icon img {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
     object-position: center;
     filter: brightness(0.8);
-    transition: filter 0.3s ease;
+    transition: all 0.3s ease;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .service-tile h3 {
