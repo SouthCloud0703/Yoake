@@ -8,6 +8,7 @@ This directory contains all images used in the Yoake Labs website.
 - `/partners/` - Partner company logos
 - `/team/` - Team member photos
 - `/testimonials/` - Client testimonial photos
+- `/services/` - Service icons and logos
 
 ## Image Guidelines
 
@@ -36,8 +37,14 @@ This directory contains all images used in the Yoake Labs website.
 - [ ] partner-2.png through partner-8.png
 
 ### Team
-- [ ] yutaro.jpg
-- [ ] softgate.jpg
+- [x] yutaro.jpg
+- [x] softgate.jpg
+
+### Services
+- [ ] validator-operations.png
+- [ ] validator-service.png
+- [ ] infrastructure-support.png
+- [ ] enterprise-partnerships.png
 
 ### Testimonials
 - [ ] alex-chen.jpg
