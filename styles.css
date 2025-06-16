@@ -214,11 +214,12 @@ header {
 }
 
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    display: flex;
     gap: 2rem;
     margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .testimonial-card {
@@ -231,6 +232,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+    max-width: 450px;
 }
 
 .testimonial-card:hover {
@@ -574,9 +577,12 @@ footer p {
     }
     
     .testimonials-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
+        flex-direction: column;
         gap: 1.5rem;
+    }
+    
+    .testimonial-card {
+        max-width: none;
     }
     
     .team-grid {
