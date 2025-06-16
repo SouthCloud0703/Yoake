@@ -17,103 +17,75 @@ class SunVisualization {
     }
     
     bindEvents() {
+        // Enable pointer events for the canvas
+        this.canvas.style.pointerEvents = 'auto';
+        
         this.canvas.addEventListener('mousemove', (e) => {
             const rect = this.canvas.getBoundingClientRect();
             this.mouseX = e.clientX - rect.left;
             this.mouseY = e.clientY - rect.top;
-            
-            // Update intensity based on mouse Y position (inverted)
-            this.intensity = Math.max(0, Math.min(1, 1 - (this.mouseY / this.height)));
+        });
+        
+        // Reset to center when mouse leaves the canvas
+        this.canvas.addEventListener('mouseleave', () => {
+            this.mouseX = this.width / 2;
+            this.mouseY = this.height / 2;
         });
     }
     
     drawBackground() {
-        // Simple gradient background based on intensity
-        const gradient = this.ctx.createLinearGradient(0, 0, 0, this.height);
-        
-        if (this.intensity < 0.3) {
-            // Night
-            gradient.addColorStop(0, `hsl(220, 30%, ${5 + this.intensity * 10}%)`);
-            gradient.addColorStop(1, `hsl(240, 40%, ${3 + this.intensity * 7}%)`);
-        } else if (this.intensity < 0.7) {
-            // Dawn
-            const dawnProgress = (this.intensity - 0.3) / 0.4;
-            gradient.addColorStop(0, `hsl(${220 - dawnProgress * 40}, 50%, ${15 + dawnProgress * 25}%)`);
-            gradient.addColorStop(1, `hsl(${30 - dawnProgress * 10}, 60%, ${20 + dawnProgress * 30}%)`);
-        } else {
-            // Day
-            const dayProgress = (this.intensity - 0.7) / 0.3;
-            gradient.addColorStop(0, `hsl(200, 60%, ${40 + dayProgress * 20}%)`);
-            gradient.addColorStop(1, `hsl(220, 50%, ${50 + dayProgress * 15}%)`);
-        }
-        
-        this.ctx.fillStyle = gradient;
+        // Simple dark background to match the site theme
+        this.ctx.fillStyle = '#0a0a0a';
         this.ctx.fillRect(0, 0, this.width, this.height);
     }
     
     drawSun() {
         const sunX = this.mouseX;
-        const sunY = this.height * 0.75 - (this.intensity * this.height * 0.5);
+        const sunY = this.height / 2;
         
-        // Sun size based on intensity
-        const baseRadius = 25;
-        const maxRadius = 60;
-        const radius = baseRadius + (maxRadius - baseRadius) * this.intensity;
+        // Fixed sun size for consistent appearance
+        const radius = 50;
         
-        // Sun color based on intensity
-        let sunColor;
-        if (this.intensity < 0.3) {
-            // Moon-like when dim
-            sunColor = `rgba(220, 230, 250, ${0.3 + this.intensity * 0.7})`;
-        } else if (this.intensity < 0.7) {
-            // Sunrise colors
-            const progress = (this.intensity - 0.3) / 0.4;
-            const red = Math.floor(255 * (0.8 + progress * 0.2));
-            const green = Math.floor(180 + progress * 75);
-            const blue = Math.floor(80 + progress * 40);
-            sunColor = `rgba(${red}, ${green}, ${blue}, ${0.8 + progress * 0.2})`;
-        } else {
-            // Bright day sun
-            const progress = (this.intensity - 0.7) / 0.3;
-            sunColor = `rgba(255, ${220 + progress * 35}, ${120 + progress * 80}, ${0.9 + progress * 0.1})`;
-        }
+        // Logo orange color: #FF8F37 (255, 143, 55)
+        const logoOrange = '255, 143, 55';
         
-        // Outer glow
-        const glowRadius = radius * (1.5 + this.intensity * 1.5);
+        // Outer glow with orange theme
+        const glowRadius = radius * 2.5;
         const glowGradient = this.ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, glowRadius);
-        
-        if (this.intensity < 0.3) {
-            glowGradient.addColorStop(0, `rgba(220, 230, 250, ${this.intensity * 0.4})`);
-            glowGradient.addColorStop(0.7, `rgba(200, 220, 240, ${this.intensity * 0.2})`);
-        } else {
-            glowGradient.addColorStop(0, `rgba(255, 200, 100, ${0.3 + this.intensity * 0.4})`);
-            glowGradient.addColorStop(0.5, `rgba(255, 150, 50, ${0.2 + this.intensity * 0.3})`);
-        }
-        glowGradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        glowGradient.addColorStop(0, `rgba(${logoOrange}, 0.6)`);
+        glowGradient.addColorStop(0.3, `rgba(${logoOrange}, 0.4)`);
+        glowGradient.addColorStop(0.6, `rgba(${logoOrange}, 0.2)`);
+        glowGradient.addColorStop(1, `rgba(${logoOrange}, 0)`);
         
         this.ctx.fillStyle = glowGradient;
         this.ctx.beginPath();
         this.ctx.arc(sunX, sunY, glowRadius, 0, Math.PI * 2);
         this.ctx.fill();
         
-        // Main sun body
-        this.ctx.fillStyle = sunColor;
+        // Main sun body with logo orange
+        this.ctx.fillStyle = `rgba(${logoOrange}, 0.9)`;
         this.ctx.beginPath();
         this.ctx.arc(sunX, sunY, radius, 0, Math.PI * 2);
         this.ctx.fill();
         
-        // Inner bright core
-        if (this.intensity > 0.3) {
-            const coreRadius = radius * 0.4;
-            const coreGradient = this.ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, coreRadius);
-            coreGradient.addColorStop(0, `rgba(255, 255, 255, ${this.intensity * 0.8})`);
-            coreGradient.addColorStop(1, `rgba(255, 255, 200, ${this.intensity * 0.4})`);
-            
-            this.ctx.fillStyle = coreGradient;
-            this.ctx.beginPath();
-            this.ctx.arc(sunX, sunY, coreRadius, 0, Math.PI * 2);
-            this.ctx.fill();
-        }
+        // Inner bright core with lighter orange
+        const coreRadius = radius * 0.5;
+        const coreGradient = this.ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, coreRadius);
+        coreGradient.addColorStop(0, `rgba(255, 200, 150, 0.9)`);
+        coreGradient.addColorStop(1, `rgba(${logoOrange}, 0.7)`);
+        
+        this.ctx.fillStyle = coreGradient;
+        this.ctx.beginPath();
+        this.ctx.arc(sunX, sunY, coreRadius, 0, Math.PI * 2);
+        this.ctx.fill();
+        
+        // Optional: subtle pulsing effect
+        const pulseRadius = radius * 0.2;
+        const pulse = Math.sin(Date.now() * 0.003) * 0.3 + 0.7;
+        this.ctx.fillStyle = `rgba(255, 255, 255, ${pulse * 0.8})`;
+        this.ctx.beginPath();
+        this.ctx.arc(sunX, sunY, pulseRadius, 0, Math.PI * 2);
+        this.ctx.fill();
     }
     
     animate() {
