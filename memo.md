@@ -2,6 +2,12 @@
 ## Our Vision
 Where Innovation Dawns
 
+## Partner
+・Solana Foundation
+・Cherry Server
+
+## Trusted Client
+
 ## Service
 ### High-performance validator operations
 -Validator Information-
