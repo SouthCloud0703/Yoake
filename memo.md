@@ -17,13 +17,12 @@
 ## Statistics Section
 ### Total Assets Staked
 - Number: $100M+
-- Label: Total Assets Staked
 
 ## Our Services (2x2 Grid)
-### Service 1: High-performance Validator Operations
+### Service 1: Yoake Validator
 - Icon: /images/services/validator.png
-- Title: High-performance Validator Operations
-- Description: Zero commission validator operations with 99.99% uptime and Frankfurt-based infrastructure.
+- Title: Yoake Validator
+- Description:  High-performance Validator Operations
 - **Detailed Features:**
   - 0% Commission and 0% MEV
   - 99.99% Uptime with enterprise-grade infrastructure
@@ -35,7 +34,7 @@
 ### Service 2: Validator as a Service
 - Icon: /images/services/vaas.png
 - Title: Validator as a Service
-- Description: Complete validator operations for Solana-native projects and communities with maximum reliability.
+- Description: Complete validator operations for Solana-native projects and Japanese enterprise.
 - **Detailed Features:**
   - White-label validation under your brand
   - Custom infrastructure and dedicated hardware

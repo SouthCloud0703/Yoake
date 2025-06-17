@@ -388,6 +388,12 @@ header {
     cursor: pointer;
 }
 
+.service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .service-tile:hover {
     transform: translateY(-4px);
     border-color: #e6750a !important;
