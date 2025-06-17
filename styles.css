@@ -393,6 +393,14 @@ header {
     gap: 2rem;
 }
 
+.services-grid.six-column {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+}
+
 .service-tile {
     background: var(--card-background);
     padding: 2rem;
@@ -805,6 +813,12 @@ footer p {
         gap: 1.5rem;
     }
     
+    .services-grid.six-column {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
     .service-tile {
         max-width: 400px;
         width: 100%;
@@ -839,6 +853,11 @@ footer p {
     }
     
     .services-grid.four-column {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .services-grid.six-column {
         grid-template-columns: 1fr;
         gap: 1rem;
     }

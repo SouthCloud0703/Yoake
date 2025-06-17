@@ -39,6 +39,16 @@
 - Title: Stake Pool
 - Description: Stake Pool for Superteam member
 
+### Service 5: RPCs
+- Icon: /images/services/rpc.png
+- Title: RPCs
+- Description: RPCs for early projects
+
+### Service 6: Consulting
+- Icon: /images/services/consulting.png
+- Title: RPCs
+- Description: Supporting Japanese companies in adopting Solana and creating new busines
+
 ## Trusted by Section (3x2 Grid)
 ### Client 1: DeFi Protocol
 - Icon: 🏛️
@@ -69,6 +79,9 @@
 - Icon: ⚡
 - Title: Lightning Network
 - Testimonial: "High-performance validation with exceptional network reliability."
+
+## 
+
 
 ## Team Section
 ### Team Member 1
@@ -140,7 +153,13 @@ Coming Soon
 ## 00tokyo.html
 Coming Soon
 
-## stakepool.htm
+## stakepool.html
+Coming Soon
+
+## rpc.html
+Coming Soon
+
+## consulting.html
 Coming Soon
 
 
