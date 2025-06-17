@@ -386,9 +386,10 @@ header {
 }
 
 .services-grid.four-column {
-    max-width: 1400px;
+    max-width: 1000px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -800,6 +801,7 @@ footer p {
     
     .services-grid.four-column {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         gap: 1.5rem;
     }
     
