@@ -28,14 +28,16 @@
 - Icon: /images/services/vaas.png
 - Title: Validator as a Service
 - Description: Complete validator operations for Solana-native projects and Japanese enterprise.
-- **Detailed Features:**
-  - White-label validation under your brand
-  - Custom infrastructure and dedicated hardware
-  - 24/7 technical support and monitoring
-  - Active governance participation
-  - Detailed reporting and analytics
-  - Perfect for DeFi protocols, DAOs, exchanges, and enterprises
-  - Complete operational overhead management
+
+### Service 3: 00Tokyo
+- Icon: /images/services/00tokyo.png
+- Title: 00Tokyo
+- Description: Promoting IBRL from Tokyo
+
+### Service 4: Stake Pool
+- Icon: /images/services/pool.png
+- Title: Stake Pool
+- Description: Stake Pool for Superteam member
 
 ## Trusted by Section (3x2 Grid)
 ### Client 1: DeFi Protocol
@@ -133,3 +135,12 @@ Access Control
 Limit admin access. Enforce least privilege and maintain audit logs.
 
 ## vaas.html
+Coming Soon
+
+## 00tokyo.html
+Coming Soon
+
+## stakepool.htm
+Coming Soon
+
+

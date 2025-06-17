@@ -378,6 +378,20 @@ header {
     margin: 0 auto;
 }
 
+.services-grid.three-column {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.services-grid.four-column {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
 .service-tile {
     background: var(--card-background);
     padding: 2rem;
@@ -779,6 +793,16 @@ footer p {
         align-items: center;
     }
     
+    .services-grid.three-column {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .services-grid.four-column {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
     .service-tile {
         max-width: 400px;
         width: 100%;
@@ -812,6 +836,10 @@ footer p {
         gap: 1rem;
     }
     
+    .services-grid.four-column {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
     
     .stat-number {
         font-size: 3rem;
