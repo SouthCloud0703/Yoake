@@ -101,11 +101,35 @@
 - Background: #0a0a0a (Black)
 - Card Background: #1a1a1a (Dark Gray)
 
+### footer
+X : https://x.com/yoakesol
+
 ## validator.html
-- **Detailed Features:**
-  - 0% Commission and 0% MEV
-  - 99.99% Uptime with enterprise-grade infrastructure
-  - Frankfurt location for optimal European performance
-  - Real-time monitoring and automated failover
-  - Identity: 4k6wgP5WPBKQpsFGtzuXNrjcTE2fKWLj17nDvFeG5zSF
-  - Vote Account: 8zuMRTXThoPTTPLLvaiKiJshLLCqGMt9BdRjjCL19xBc
+### Key Metrics
+APY : 7.4%
+Commission : 0%
+MEV : 0%
+Total Staked : 20,000SOL
+Uptime : 99.99%
+Identity: 4k6wgP5WPBKQpsFGtzuXNrjcTE2fKWLj17nDvFeG5zSF
+Vote Account: 8zuMRTXThoPTTPLLvaiKiJshLLCqGMt9BdRjjCL19xBc
+### Security Policy
+Key Management
+Use HSMs. Keep private keys offline and rotate immediately if compromised.
+
+Network Security
+Use sentry nodes to isolate validator. Restrict access with firewalls and VPNs. DDoS protection in place.
+
+Software Updates
+Always apply latest security patches. Test updates on testnet before mainnet deployment.
+
+Infrastructure Redundancy
+Deploy across multiple regions or providers. Enable automatic failover for high availability.
+
+Monitoring & Alerts
+Continuously monitor node health and slashing risk. Set up real-time alerts for incidents.
+
+Access Control
+Limit admin access. Enforce least privilege and maintain audit logs.
+
+## vaas.html
