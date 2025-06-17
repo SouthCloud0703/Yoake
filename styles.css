@@ -348,48 +348,19 @@ header {
     background: var(--background-dark);
 }
 
-.stats-grid {
+.simple-stat {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.stat-card {
-    background: var(--card-background);
-    padding: 3rem 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    flex: 1;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.stat-card:hover {
-    transform: translateY(-4px);
-    border-color: #e6750a !important;
-    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
+    margin: 2rem 0;
 }
 
 .stat-number {
     font-size: 4rem;
     font-weight: 800;
     color: var(--primary-color);
-    margin-bottom: 1rem;
     letter-spacing: -0.02em;
     line-height: 1;
-}
-
-.stat-label {
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    font-weight: 600;
+    text-align: center;
 }
 
 .services {
