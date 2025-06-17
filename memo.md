@@ -23,13 +23,6 @@
 - Icon: /images/services/validator.png
 - Title: Yoake Validator
 - Description:  High-performance Validator Operations
-- **Detailed Features:**
-  - 0% Commission and 0% MEV
-  - 99.99% Uptime with enterprise-grade infrastructure
-  - Frankfurt location for optimal European performance
-  - Real-time monitoring and automated failover
-  - Identity: 4k6wgP5WPBKQpsFGtzuXNrjcTE2fKWLj17nDvFeG5zSF
-  - Vote Account: 8zuMRTXThoPTTPLLvaiKiJshLLCqGMt9BdRjjCL19xBc
 
 ### Service 2: Validator as a Service
 - Icon: /images/services/vaas.png
@@ -107,3 +100,12 @@
 - Accent Color: #f4a460 (Light Orange)
 - Background: #0a0a0a (Black)
 - Card Background: #1a1a1a (Dark Gray)
+
+## validator.html
+- **Detailed Features:**
+  - 0% Commission and 0% MEV
+  - 99.99% Uptime with enterprise-grade infrastructure
+  - Frankfurt location for optimal European performance
+  - Real-time monitoring and automated failover
+  - Identity: 4k6wgP5WPBKQpsFGtzuXNrjcTE2fKWLj17nDvFeG5zSF
+  - Vote Account: 8zuMRTXThoPTTPLLvaiKiJshLLCqGMt9BdRjjCL19xBc
