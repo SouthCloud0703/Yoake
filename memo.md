@@ -148,6 +148,17 @@ Access Control
 Limit admin access. Enforce least privilege and maintain audit logs.
 
 ## vaas.html
+
+### Policy
+We focus on quality over quantity—only onboarding players who truly bring value to the Solana and validator ecosystems.
+
+### Target
+・Solana Startups
+Building a Project Based on Validator Revenue (Funding Support)
+・Japanese Enterprise
+A Validator as the Gateway to Entering the Solana Ecosystem
+
+### Trusted Clients
 Coming Soon
 
 ## 00tokyo.html

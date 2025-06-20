@@ -756,6 +756,68 @@ footer p {
     margin: 0;
 }
 
+/* Target Section Styles */
+.targets-section {
+    margin-top: 3rem;
+}
+
+.targets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.target-card {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.target-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
+}
+
+.target-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.target-card h4 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+
+.target-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.clients-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.clients-section .coming-soon-content {
+    max-width: 400px;
+    margin: 2rem auto 0;
+}
+
+.clients-section .coming-soon-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
