@@ -941,6 +941,19 @@ footer p {
     font-weight: 500;
 }
 
+.simple-policy {
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 800px;
+}
+
+.simple-policy p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
