@@ -930,6 +930,17 @@ footer p {
     font-size: 3rem;
 }
 
+.simple-coming-soon {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.simple-coming-soon p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
