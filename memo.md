@@ -83,18 +83,21 @@
 ## Trusted By
 ### Comment 1
 - Name : Darius
+- Title : Web3 Partneships
 - Commnet : "XXXXXXX"
 - Person Image : /images/trust/cherry-person.png
 - Company Logo : /images/trust/cherry.png
 
 ### Comment 2
 - Name : Darius
+- Title : Web3 Partneships
 - Commnet : "XXXXXXX"
 - Person Image : /images/trust/cherry-person.png
 - Company Logo : /images/trust/cherry.png
 
 ### Comment 3
 - Name : Darius
+- Title : Web3 Partneships
 - Commnet : "XXXXXXX"
 - Person Image : /images/trust/cherry-person.png
 - Company Logo : /images/trust/cherry.png
