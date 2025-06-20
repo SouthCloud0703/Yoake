@@ -966,6 +966,7 @@ footer p {
     margin-top: 3rem;
     overflow-x: auto;
     padding-bottom: 1rem;
+    flex-wrap: nowrap;
 }
 
 .testimonial-card {
@@ -1139,12 +1140,12 @@ footer p {
     }
     
     .testimonials-slider {
-        flex-direction: column;
+        overflow-x: auto;
         gap: 1.5rem;
     }
     
     .testimonial-card {
-        min-width: 100%;
+        min-width: 300px;
     }
     
     .service-tile {
