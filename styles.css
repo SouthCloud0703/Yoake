@@ -818,6 +818,118 @@ footer p {
     margin-bottom: 1rem;
 }
 
+/* Enhanced Card Styles */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-icon, .target-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.card-header h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.card-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.feature-list {
+    margin-top: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-bullet {
+    color: var(--primary-color);
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.feature-item span:last-child {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.targets {
+    padding: 6rem 0;
+}
+
+.targets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.target-card {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    height: fit-content;
+}
+
+.target-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
+}
+
+.clients {
+    padding: 6rem 0;
+}
+
+.clients-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.coming-soon-card {
+    background: var(--card-background);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    max-width: 500px;
+    transition: all 0.3s ease;
+}
+
+.coming-soon-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 32px rgba(230, 117, 10, 0.1);
+}
+
+.coming-soon-card .coming-soon-icon {
+    font-size: 3rem;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;

@@ -162,6 +162,10 @@ A Validator as the Gateway to Entering the Solana Ecosystem
 Coming Soon
 
 ## 00tokyo.html
+### Policy
+00Tokyo aims to maximize the potential of validators through leveraging our Japan-based position to promote Double Zero's IBRL in the Japanese market
+
+### Partner
 Coming Soon
 
 ## stakepool.html
